@@ -3,7 +3,7 @@ const Comment = require('../models/Comment');
 module.exports = {
   getComments: (req, res) => {
     const storedComments = Comment.findAll();
-
+    console.log('controllers/comments.js内でのデータ : ', storedComments);
     res.status(200).json(storedComments);
   },
   postComment: (req, res) => {
