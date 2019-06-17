@@ -14,8 +14,8 @@ const knex = require('knex')({
 
 const bookShelf = require('bookshelf')(knex);
 
-const TodoDatas = bookShelf.Model.extend({
+const Todos = bookShelf.Model.extend({
   tableName: 'todos',
 });
 
-module.exports = TodoDatas;
+module.exports = Todos;

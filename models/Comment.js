@@ -24,18 +24,17 @@
 //   comments.push(comment);
 // }
 
-const TodoDatas = require('../config/connect');
+const Todos = require('../config/connect');
 
 module.exports = {
-  findAll: () => {
-    new TodoDatas().fetchAll().then(collection => {
+  findAll: async () => {
+    const todos = await Todos.fetchAll().then(collection => {
       const data = {
         content: collection.toArray(),
       };
-      console.log('modesls/Comment.js内でのデータ : ', data);
-      console.log('DBに入っているデータ : ', data.content[0]);
       return data;
     });
+    return todos;
   },
   createComment: ({ username, body }) => {
     if (!username) {

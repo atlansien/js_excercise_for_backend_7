@@ -1,8 +1,8 @@
 const Comment = require('../models/Comment');
 
 module.exports = {
-  getComments: (req, res) => {
-    const storedComments = Comment.findAll();
+  getComments: async (req, res) => {
+    const storedComments = await Comment.findAll();
     console.log('controllers/comments.js内でのデータ : ', storedComments);
     res.status(200).json(storedComments);
   },
