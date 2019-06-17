@@ -27,8 +27,8 @@
 const Todos = require('../config/connect');
 
 module.exports = {
-  findAll: async () => {
-    const todos = await Todos.fetchAll().then(collection => {
+  findAll: () => {
+    const todos = Todos.fetchAll().then(collection => {
       const data = {
         content: collection.toArray(),
       };
