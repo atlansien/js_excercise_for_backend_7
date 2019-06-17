@@ -33,6 +33,7 @@ module.exports = {
         content: collection.toArray(),
       };
       console.log('modesls/Comment.js内でのデータ : ', data);
+      console.log('DBに入っているデータ : ', data.content[0]);
       return data;
     });
   },
